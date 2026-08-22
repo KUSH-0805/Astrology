@@ -1,0 +1,53 @@
+# ===== BACKEND (Python/Django) =====
+
+# Python virtual environment (where we install Django packages)
+venv/
+env/
+.venv/
+
+# Python cache files (auto-generated, not needed in git)
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django static files
+staticfiles/
+media/
+
+# Environment variables - SECRET! Never commit
+.env
+.env.*
+!.env.example
+
+# Database files
+*.sqlite3
+*.db
+
+# ===== FRONTEND (Node.js/React) =====
+
+# Dependencies - can always re-install with `npm install`
+node_modules/
+
+# Build output - created by `npm run build`
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Environment variables - SECRET! Never commit
+.env.local
+.env.*.local
+
+# ===== MISC =====
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
