@@ -1,0 +1,11 @@
+# Core web framework - handles URLs, databases, admin panel, security
+Django==5.1.4
+
+# Adds REST API capabilities to Django (turns our data into JSON)
+djangorestframework==3.15.2
+
+# Allows our React frontend (on a different port) to call our Django API
+django-cors-headers==4.6.0
+
+# Reads .env files so we can keep passwords/keys out of code
+python-dotenv==1.0.1
