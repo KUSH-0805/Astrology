@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './App.css'
 
 function App() {
   const [backendMessage, setBackendMessage] = useState('Connecting to backend...')
@@ -14,12 +13,18 @@ function App() {
   }, [])
 
   return (
-    <div className="health-check">
-      <h1>House of Astrology</h1>
-      <p className="status">
-        {error ? <span className="error">{error}</span> : backendMessage}
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-8 bg-deep-black text-soft-white">
+      <h1 className="font-heading text-4xl md:text-5xl text-gold mb-4">
+        House of Astrology
+      </h1>
+      <p className="text-lg md:text-xl px-8 py-4 rounded-lg bg-charcoal border border-gold/30 text-soft-white">
+        {error ? (
+          <span className="text-red-400">{error}</span>
+        ) : (
+          backendMessage
+        )}
       </p>
-      <p className="hint">
+      <p className="mt-6 text-sm text-soft-white/60 max-w-md">
         This page is React (port 5173) talking to Django (port 8000) — the
         message above comes from the backend!
       </p>

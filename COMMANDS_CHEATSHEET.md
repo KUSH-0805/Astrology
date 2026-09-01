@@ -74,6 +74,7 @@ npm is Node's **package manager** (like pip for Python, but for JavaScript).
 | `npm install --prefix frontend` | **Installs** all dependencies listed in `package.json` | After creating the project, or when new packages are added |
 | `npm run dev --prefix frontend` | **Starts** the Vite dev server (port 5173) | Every time you want to run the frontend |
 | `npm install <package> --prefix frontend` | Installs a **specific** package | When we add new libraries (e.g., Tailwind, Axios) |
+| `npm install tailwindcss @tailwindcss/vite --prefix frontend` | Installs Tailwind CSS + its Vite plugin | Once, to set up the styling framework |
 
 > **Note:** `--prefix frontend` tells npm to work inside the `frontend/` folder. This is needed because our terminal doesn't remember `cd` between commands.
 
@@ -136,6 +137,8 @@ Expected output: `{"status": "ok", "message": "House of Astrology API is running
 | 3 | `curl -s http://localhost:5173/` | Verify React is running |
 | 4 | `curl -s http://localhost:8000/api/health/` | Test health check endpoint |
 | 4 | `start http://localhost:5173` | Open the website in browser |
+| 5 | `npm install tailwindcss @tailwindcss/vite --prefix frontend` | Install Tailwind CSS + Vite plugin |
+| 5 | `del frontend\src\App.css` | Remove old CSS (Tailwind replaces it) |
 
 ---
 
