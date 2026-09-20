@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Navbar from './components/Navbar'
 
 function App() {
   const [backendMessage, setBackendMessage] = useState('Connecting to backend...')
@@ -9,11 +10,13 @@ function App() {
     fetch('http://localhost:8000/api/health/')
       .then((response) => response.json())
       .then((data) => setBackendMessage(data.message))
-      .catch((err) => setError('Could not reach the backend. Is Django running?'))
+      .catch(() => setError('Could not reach the backend. Is Django running?'))
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-8 bg-deep-black text-soft-white">
+    <>
+      <Navbar />
+      <div className="min-h-screen flex flex-col items-center justify-center text-center px-8 bg-deep-black text-soft-white">
       <h1 className="font-heading text-4xl md:text-5xl text-gold mb-4">
         House of Astrology
       </h1>
@@ -29,6 +32,7 @@ function App() {
         message above comes from the backend!
       </p>
     </div>
+    </>
   )
 }
 
