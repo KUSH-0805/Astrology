@@ -13,6 +13,22 @@
   /* Fonts */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Custom cosmic animations (used by Hero section) */
+  --animate-twinkle: twinkle 3s ease-in-out infinite;
+  --animate-orbit: orbit 60s linear infinite;
+}
+
+/* Keyframes for the twinkling stars in the Hero */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Keyframes for the slow-spinning orbital ring */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ===== Base Styles ===== */

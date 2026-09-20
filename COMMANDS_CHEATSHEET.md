@@ -75,6 +75,7 @@ npm is Node's **package manager** (like pip for Python, but for JavaScript).
 | `npm run dev --prefix frontend` | **Starts** the Vite dev server (port 5173) | Every time you want to run the frontend |
 | `npm install <package> --prefix frontend` | Installs a **specific** package | When we add new libraries (e.g., Tailwind, Axios) |
 | `npm install tailwindcss @tailwindcss/vite --prefix frontend` | Installs Tailwind CSS + its Vite plugin | Once, to set up the styling framework |
+| `npm install framer-motion --prefix frontend` | Installs Framer Motion — the animation library for React | Once, to power the cosmic animations in the Hero |
 | `npm run build --prefix frontend` | **Compiles** and checks the whole app for errors (builds the production files) | To verify your code has no TypeScript errors |
 
 > **Note:** `--prefix frontend` tells npm to work inside the `frontend/` folder. This is needed because our terminal doesn't remember `cd` between commands.
@@ -120,6 +121,36 @@ Expected output: `{"status": "ok", "message": "House of Astrology API is running
 
 ---
 
+## 🗂️ Project File Structure
+
+Here's how the project is organized — this will grow as we add features:
+
+```
+HouseOfAstrology/
+├── backend/                  ← Django (Python) — the API server
+│   ├── venv/                 ← Isolated Python packages (don't touch)
+│   ├── manage.py             ← Django's main command tool
+│   └── config/               ← Django project settings
+│
+├── frontend/                 ← React (TypeScript) — the website we see
+│   ├── node_modules/         ← Installed JS packages (don't touch)
+│   ├── src/
+│   │   ├── main.tsx          ← Entry point (loads the app)
+│   │   ├── index.css         ← Tailwind + our custom theme & animations
+│   │   ├── App.tsx           ← The main page — assembles all sections
+│   │   └── components/       ← Reusable UI pieces
+│   │       ├── Navbar.tsx    ← ✅ Step 6: top navigation bar
+│   │       └── Hero.tsx      ← ✅ Step 7: hero section (moon + stars)
+│   └── package.json          ← List of JS packages + scripts
+│
+├── COMMANDS_CHEATSHEET.md    ← This file 📖
+└── house_of_astrology_full_implementation_plan.md  ← The master plan
+```
+
+> **Tip:** Every visible piece of the page is a **component** in `frontend/src/components/`. We build one at a time, then plug it into `App.tsx`.
+
+---
+
 ## 📝 Commands Log (What We've Used So Far)
 
 | Step | Command | Purpose |
@@ -141,6 +172,8 @@ Expected output: `{"status": "ok", "message": "House of Astrology API is running
 | 5 | `npm install tailwindcss @tailwindcss/vite --prefix frontend` | Install Tailwind CSS + Vite plugin |
 | 5 | `del frontend\src\App.css` | Remove old CSS (Tailwind replaces it) |
 | 6 | `npm run build --prefix frontend` | Compile & verify the whole frontend builds without errors |
+| 7 | `npm install framer-motion --prefix frontend` | Install Framer Motion for animations |
+| 7 | `npm run build --prefix frontend` | Verify Hero section compiles with Framer Motion |
 
 ---
 

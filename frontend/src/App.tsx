@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 
 function App() {
   const [backendMessage, setBackendMessage] = useState('Connecting to backend...')
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Hero />
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-8 bg-deep-black text-soft-white">
       <h1 className="font-heading text-4xl md:text-5xl text-gold mb-4">
         House of Astrology
